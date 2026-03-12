@@ -1,31 +1,27 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mountain, BookOpen, Camera, Music } from "lucide-react";
+import { Cpu, Clapperboard, BookOpen, Trees, PenLine } from "lucide-react";
 
 const interests = [
   {
-    icon: Mountain,
-    title: "Adventure & Travel",
-    description:
-      "From trekking in the Himalayas to exploring street food markets in Southeast Asia — I believe the best ideas come from experiencing the world.",
+    icon: Cpu,
+    title: "Building with AI",
+    description: "Vibe-coding apps that solve real problems.",
+  },
+  {
+    icon: Clapperboard,
+    title: "Movies & Series",
+    description: "Always watching something worth discussing.",
   },
   {
     icon: BookOpen,
-    title: "Lifelong Learner",
-    description:
-      "Always reading, always curious. From behavioral economics to sci-fi novels — my reading list is as diverse as my product backlog.",
+    title: "Books & Anime",
+    description: "Reader across genres — from mythology to manga.",
   },
   {
-    icon: Camera,
-    title: "Photography",
-    description:
-      "I see the world through a lens — capturing moments, patterns, and stories that often inspire my approach to product design.",
-  },
-  {
-    icon: Music,
-    title: "Music & Creativity",
-    description:
-      "Whether it's playing guitar on weekends or curating playlists for deep work — music is the soundtrack to my creative process.",
+    icon: Trees,
+    title: "Outdoors",
+    description: "Best thinking happens outside.",
   },
 ];
 
@@ -72,6 +68,31 @@ const BeyondWorkSection = () => {
           );
         })}
       </div>
+
+      {/* Blog link */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.7, duration: 0.5 }}
+        className="mt-10"
+      >
+        <a
+          href="https://adhyayah.wordpress.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-3 bg-card rounded-xl px-6 py-5 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-[var(--shadow-warm)]"
+        >
+          <PenLine className="w-5 h-5 text-primary" />
+          <div>
+            <p className="font-display text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+              Adhyayah
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Personal writing on product, life, and everything in between.
+            </p>
+          </div>
+        </a>
+      </motion.div>
     </section>
   );
 };

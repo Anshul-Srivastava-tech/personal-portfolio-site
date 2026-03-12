@@ -4,28 +4,54 @@ import { useRef } from "react";
 
 const experiences = [
   {
-    period: "2021 — Present",
-    role: "Senior Product Manager",
-    company: "Tech Company",
-    description:
-      "Leading product strategy for a B2B SaaS platform serving 500K+ users. Drove 40% increase in user retention through data-driven feature prioritization and cross-functional team leadership.",
-    highlights: ["Product Strategy", "Data Analytics", "Team Leadership"],
+    period: "Oct 2021 — Present",
+    role: "Principal Product Manager, Fintech",
+    company: "Blackhawk Network",
+    location: "Bengaluru, India",
+    bullets: [
+      "Designed and launched a global servicing platform reducing average handle time by <strong>15%</strong>",
+      "Digitized the customer dispute journey generating <strong>$1.32M</strong> in <strong>annualized cost savings</strong>",
+      "Defined <strong>AI-led servicing strategy</strong> with Engineering to deflect Operations volume and enable faster request handling — potential savings of <strong>$500K/yr</strong>",
+      "Onboarded <strong>700+ external users</strong> across partner organizations onto a self-service platform, defining pricing and onboarding strategy generating <strong>$0.5M</strong> in <strong>new revenue</strong>",
+      "Built an <strong>AI-powered Knowledge Assistant</strong> — cutting knowledge discovery from <strong>hours to minutes</strong> and enabling self-service at scale across the organization",
+    ],
+    highlights: ["Product Strategy", "Fintech", "AI", "Platform", "Payments"],
   },
   {
-    period: "2018 — 2021",
+    period: "Sep 2017 — Sep 2021",
     role: "Product Manager",
-    company: "Growth Startup",
-    description:
-      "Owned the full product lifecycle from ideation to launch. Shipped 12 major features that contributed to 3x revenue growth. Built and mentored a team of 4 associate PMs.",
-    highlights: ["0→1 Products", "Revenue Growth", "Mentorship"],
+    company: "American Express",
+    location: "Gurgaon, India",
+    bullets: [
+      "Digitized KYC journey across <strong>6</strong> EMEA markets impacting <strong>1M+</strong> cardholder accounts",
+      "Built AI/NLP case presentment automation addressing a <strong>$14M</strong> global <strong>OPEX opportunity</strong>",
+      "Automated dispute abuser identification reducing <strong>manual effort</strong> by <strong>75%</strong>, saving <strong>$350K</strong>",
+      "Automated <strong>12</strong> manual processes via RPA delivering <strong>$2M</strong> in <strong>cost savings</strong>",
+    ],
+    highlights: ["KYC", "AI/NLP", "RPA", "Automation", "EMEA"],
   },
   {
-    period: "2015 — 2018",
-    role: "Associate Product Manager",
-    company: "Enterprise Corp",
-    description:
-      "Started my PM journey working on enterprise workflow tools. Learned the fundamentals of user research, agile methodology, and stakeholder management.",
-    highlights: ["User Research", "Agile", "Stakeholder Mgmt"],
+    period: "Jun 2015 — Aug 2017",
+    role: "Consultant",
+    company: "Wipro Limited",
+    location: "New Delhi, India",
+    bullets: [
+      "Analyzed <strong>15+</strong> processes for automation across telecom and financial services clients",
+      "Built Tableau dashboards for real-time business intelligence at client locations",
+      "Developed a logistic regression model in R for SLA performance prediction",
+    ],
+    highlights: ["Consulting", "Automation", "Tableau", "Analytics"],
+  },
+  {
+    period: "Jul 2011 — May 2013",
+    role: "Assistant Manager, Operations",
+    company: "Apraava Energy",
+    location: "Jhajjar, India",
+    bullets: [
+      "Led two engineers and ten field operators at a <strong>660x2 MW</strong> power plant",
+      "Proposed and presented an <strong>INR 20 crore</strong> energy efficiency initiative using Variable Frequency Drives to senior leadership",
+    ],
+    highlights: ["Operations", "Energy", "Leadership"],
   },
 ];
 
@@ -52,10 +78,15 @@ const ExperienceItem = ({ exp, index }: { exp: typeof experiences[0]; index: num
         <h3 className="font-display text-xl font-semibold text-foreground">
           {exp.role}
         </h3>
-        <p className="text-primary text-sm font-medium mt-1">{exp.company}</p>
-        <p className="text-muted-foreground mt-3 leading-relaxed text-sm">
-          {exp.description}
-        </p>
+        <p className="text-primary text-sm font-medium mt-1">{exp.company} · {exp.location}</p>
+        <ul className="mt-3 space-y-1.5 pl-1 list-none">
+          {exp.bullets.map((bullet) => (
+            <li key={bullet} className="text-muted-foreground text-sm leading-relaxed flex [&_strong]:text-foreground [&_strong]:font-semibold">
+              <span className="text-primary mr-2 shrink-0">▸</span>
+              <span dangerouslySetInnerHTML={{ __html: bullet }} />
+            </li>
+          ))}
+        </ul>
         <div className="flex flex-wrap gap-2 mt-4">
           {exp.highlights.map((h) => (
             <span

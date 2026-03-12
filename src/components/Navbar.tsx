@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 const links = [
   { label: "Experience", href: "#experience" },
+  { label: "Case Studies", href: "#case-studies" },
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
   { label: "Beyond Work", href: "#beyond" },
@@ -32,7 +33,7 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
         <a href="#" className="font-display text-sm font-semibold tracking-wide text-foreground">
-          YN<span className="text-primary">.</span>
+          Anshul<span className="text-primary">.</span>
         </a>
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
@@ -44,6 +45,16 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <a
+            href="/assets/resume.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg border border-primary text-primary text-xs font-display font-medium tracking-wide hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+          >
+            <Download className="w-3.5 h-3.5" />
+            Resume
+          </a>
         </div>
         <button
           className="md:hidden text-foreground p-2 -mr-2"
@@ -69,11 +80,22 @@ const Navbar = () => {
                   key={link.label}
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="text-sm font-display tracking-wide text-muted-foreground hover:text-foreground transition-colors py-3 border-b border-border/30 last:border-0"
+                  className="text-sm font-display tracking-wide text-muted-foreground hover:text-foreground transition-colors py-3 border-b border-border/30"
                 >
                   {link.label}
                 </a>
               ))}
+              <a
+                href="/assets/resume.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleLinkClick}
+                className="inline-flex items-center justify-center gap-2 mt-3 px-4 py-2.5 rounded-lg border border-primary text-primary text-sm font-display font-medium tracking-wide hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+              >
+                <Download className="w-4 h-4" />
+                Download Resume
+              </a>
             </div>
           </motion.div>
         )}

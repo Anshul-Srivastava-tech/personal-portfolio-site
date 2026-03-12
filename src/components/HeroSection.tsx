@@ -26,7 +26,7 @@ const HeroSection = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-primary font-display text-sm tracking-[0.3em] uppercase"
           >
-            Senior Product Manager
+            Principal Product Manager · Fintech & E-commerce
           </motion.p>
 
           <motion.h1
@@ -36,7 +36,7 @@ const HeroSection = () => {
             className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight"
           >
             <span className="block">Hi, I'm</span>
-            <span className="text-gradient block mt-2">Your Name.</span>
+            <span className="text-gradient block mt-2">Anshul Kumar Srivastava.</span>
           </motion.h1>
 
           <motion.p
@@ -45,8 +45,8 @@ const HeroSection = () => {
             transition={{ delay: 0.9, duration: 0.8 }}
             className="max-w-lg text-lg text-muted-foreground font-body leading-relaxed"
           >
-            I build products that matter — bridging business vision and user needs
-            to create experiences people love. Let me show you my journey.
+            Product leader turning complex operational problems into
+            scalable platforms using AI and automation.
           </motion.p>
 
           <motion.div
@@ -59,13 +59,13 @@ const HeroSection = () => {
               href="#experience"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-display text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
             >
-              Explore My Work
+              View Experience
             </a>
             <a
-              href="#beyond"
+              href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-display text-sm font-medium tracking-wide hover:border-primary/50 transition-colors"
             >
-              The Human Side
+              See Projects
             </a>
           </motion.div>
         </motion.div>

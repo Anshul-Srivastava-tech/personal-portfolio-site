@@ -5,22 +5,23 @@ import { GraduationCap, Award } from "lucide-react";
 const education = [
   {
     type: "degree",
-    title: "MBA, Business Administration",
-    institution: "University Name",
-    year: "2015",
+    title: "MBA",
+    institution: "Management Development Institute (MDI), Gurgaon",
+    year: "2013–2015",
   },
   {
     type: "degree",
-    title: "B.S. Computer Science",
-    institution: "University Name",
-    year: "2013",
+    title: "B.Tech, Electrical Engineering",
+    institution: "NIT Surat",
+    year: "2007–2011",
   },
 ];
 
 const certifications = [
-  { title: "Certified Scrum Product Owner (CSPO)", issuer: "Scrum Alliance", year: "2023" },
-  { title: "Product Analytics Certification", issuer: "Amplitude", year: "2022" },
-  { title: "AI Product Management", issuer: "Coursera", year: "2024" },
+  { title: "AWS Cloud Practitioner", issuer: "Amazon Web Services" },
+  { title: "SAFe 4.5", issuer: "Scaled Agile Framework" },
+  { title: "CSPO", issuer: "Certified Scrum Product Owner" },
+  { title: "Six Sigma Black Belt", issuer: "" },
 ];
 
 const EducationSection = () => {
@@ -80,8 +81,7 @@ const EducationSection = () => {
             {certifications.map((cert) => (
               <div key={cert.title} className="border-l-2 border-primary/30 pl-5">
                 <p className="font-display font-medium text-foreground">{cert.title}</p>
-                <p className="text-sm text-muted-foreground mt-1">{cert.issuer}</p>
-                <p className="text-xs text-muted-foreground mt-1">{cert.year}</p>
+                {cert.issuer && <p className="text-sm text-muted-foreground mt-1">{cert.issuer}</p>}
               </div>
             ))}
           </div>
