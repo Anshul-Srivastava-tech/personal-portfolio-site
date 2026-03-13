@@ -46,7 +46,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="/assets/resume.pdf"
+            href="/personal-portfolio-site/assets/resume.pdf"
             download
             target="_blank"
             rel="noopener noreferrer"
@@ -86,7 +86,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="/assets/resume.pdf"
+                href="/personal-portfolio-site/assets/resume.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
