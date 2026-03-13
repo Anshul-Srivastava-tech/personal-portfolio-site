@@ -74,7 +74,7 @@ const ExperienceItem = ({ exp, index }: { exp: typeof experiences[0]; index: num
         {exp.period}
       </div>
 
-      <div className="md:pl-12 md:border-l border-border pb-12 last:pb-0 group-last:border-transparent">
+      <div className="md:pl-12 md:border-l border-border pb-32 last:pb-0 group-last:border-transparent">
         <h3 className="font-display text-xl font-semibold text-foreground">
           {exp.role}
         </h3>

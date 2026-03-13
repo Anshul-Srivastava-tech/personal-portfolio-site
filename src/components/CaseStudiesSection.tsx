@@ -7,8 +7,12 @@ const caseStudies = [
     tags: ["Digitization", "Automation", "Compliance", "Blackhawk Network"],
     problem:
       "Cardholders raising disputes had to download a form, fill it manually, scan it, and submit via fax or email. Before a single agent could begin reviewing it, hours or days had already passed. A poor experience at an already frustrating customer moment — compounded by rising compliance pressure after a competitor was fined by the regulator.",
-    approach:
-      "Led a build-vs-buy analysis that resulted in a hybrid approach — purchasing a specialized module for automated backend processing and card network integrations, then integrating it with core systems to deliver a seamless end-to-end digital journey. On the frontend, customers could submit disputes digitally in minutes. On the backend, rule-based automation handled ticket creation, pre-populated case information, routed to the correct team, and integrated directly with card networks to accelerate pre-dispute processing and chargeback resolution — all without manual intervention. The build-vs-buy decision required a financial model projecting savings against build costs, integration complexity, and vendor risk to secure senior leadership buy-in.",
+    approach: [
+      "Conducted <strong>build-vs-buy analysis</strong> — selected a hybrid approach purchasing a third-party module for backend processing and card network integrations",
+      "Integrated vendor module with core systems to deliver a seamless <strong>end-to-end digital dispute journey</strong>",
+      "Automated <strong>ticket creation, case routing, and pre-dispute processing</strong> via card network integrations — zero manual intervention",
+      "Built financial model projecting savings vs. build costs to secure <strong>senior leadership buy-in</strong>",
+    ],
     impact: [
       "<strong>$1.32M</strong> in annualized cost savings through automation",
       "Dispute submission reduced from <strong>hours/days to minutes</strong>",
@@ -21,8 +25,12 @@ const caseStudies = [
     tags: ["0-to-1", "Cross-functional", "Blackhawk Network"],
     problem:
       "Customer operations ran on a fragmented foundation — Excel trackers, disconnected point tools, no automation, and zero self-serve capability. Every customer request required manual intervention, making it impossible to scale servicing without scaling headcount proportionally.",
-    approach:
-      "Led end-to-end product strategy to consolidate disparate servicing workflows into a single unified platform — aligning Customer Support leadership, Product and Engineering leads from multiple legacy systems, and Director and VP-level stakeholders across the organization. Consolidating systems that different teams had built their workflows around required navigating organizational resistance alongside technical complexity. Getting stakeholders to give up their tools meant demonstrating clear value for each team, not just the business overall. Concept to launch: 12 months.",
+    approach: [
+      "Defined <strong>platform consolidation strategy</strong> — aligning Customer Support, Engineering, and legacy system owners around a single unified vision",
+      "Navigated <strong>organizational resistance</strong> by demonstrating clear value for each team, not just the business",
+      "Drove alignment across <strong>Director and VP-level stakeholders</strong> across multiple functions",
+      "Delivered concept to launch in <strong>12 months</strong>",
+    ],
     impact: [
       "Reduced average request handling time by <strong>15%</strong>",
       "Enabled <strong>self-serve capabilities</strong> for the first time, reducing inbound volume",
@@ -35,8 +43,12 @@ const caseStudies = [
     tags: ["AI/NLP", "0-to-1", "American Express"],
     problem:
       "Customer complaints arrived across multiple email mailboxes globally — each requiring an agent to manually read, interpret, classify, and route before any resolution work could begin. Processing delays, inconsistent routing, and an unsustainable manual workload as volume scaled globally.",
-    approach:
-      "Co-defined and led the product strategy with Engineering for an NLP-powered solution that reads incoming emails in real time, identifies customer intent, classifies the request, creates a ticket automatically, and routes it to the correct team — with zero manual intervention across global mailboxes simultaneously. Defining the intent taxonomy, confidence thresholds for automated versus human routing, and fallback logic required tight collaboration between product thinking and engineering capability.",
+    approach: [
+      "Co-defined <strong>NLP solution architecture</strong> with Engineering — real-time email reading, intent classification, and automated ticket routing",
+      "Designed <strong>intent taxonomy</strong> and confidence thresholds for automated vs. human-review routing",
+      "Built <strong>fallback logic</strong> to handle ambiguous customer language across global markets",
+      "Deployed across <strong>multiple global mailboxes</strong> simultaneously from a single solution",
+    ],
     impact: [
       "Identified <strong>$14M OPEX opportunity</strong> — full addressable savings from eliminating manual case intake globally",
       "<strong>Zero manual intervention</strong> in the intake pipeline",
@@ -98,9 +110,17 @@ const CaseStudyCard = ({
           <p className="text-primary font-display text-sm tracking-[0.3em] uppercase mb-3">
             Approach
           </p>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {study.approach}
-          </p>
+          <ul className="space-y-1.5 pl-1 list-none">
+            {study.approach.map((point) => (
+              <li
+                key={point}
+                className="text-muted-foreground text-sm leading-relaxed flex [&_strong]:text-foreground [&_strong]:font-semibold"
+              >
+                <span className="text-primary mr-2 shrink-0">▸</span>
+                <span dangerouslySetInnerHTML={{ __html: point }} />
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
           <p className="text-primary font-display text-sm tracking-[0.3em] uppercase mb-3">
