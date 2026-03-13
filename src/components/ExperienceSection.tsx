@@ -8,11 +8,12 @@ const experiences = [
     role: "Principal Product Manager, Fintech",
     company: "Blackhawk Network",
     location: "Bengaluru, India",
+    subtitle: "Senior PM → Principal PM (promoted Sep 2022)",
     bullets: [
-      "Designed and launched a global servicing platform reducing average handle time by <strong>15%</strong>",
-      "Digitized the customer dispute journey generating <strong>$1.32M</strong> in <strong>annualized cost savings</strong>",
-      "Defined <strong>AI-led servicing strategy</strong> with Engineering to deflect Operations volume and enable faster request handling — potential savings of <strong>$500K/yr</strong>",
-      "Onboarded <strong>700+ external users</strong> across partner organizations onto a self-service platform, defining pricing and onboarding strategy generating <strong>$0.5M</strong> in <strong>new revenue</strong>",
+      "Led product strategy and platform design for a global servicing platform — spanning <strong>8</strong> product teams and <strong>~30 cross-functional contributors</strong> (Product, Engineering, Ops, UX), reducing average handling time by <strong>10%</strong> across <strong>1M+</strong> annual customer contacts",
+      "Reduced cardholders dispute reporting time from <strong>~2 days to 5 minutes</strong> and enabled self-serve by digitizing the end-to-end journey via a hybrid build-buy approach, delivering <strong>$1.32M</strong> in <strong>annualized savings</strong> and achieving compliance ahead of regulatory deadlines",
+      "Defined <strong>AI-led servicing strategy</strong> with Engineering to deflect Operations volume and enable faster request handling — potential savings of <strong>$600K/yr</strong>",
+      "Created a <strong>new revenue line</strong> and already captured <strong>$500K</strong> in recurring revenue by onboarding <strong>700+ external users</strong> across partner organizations onto a self-service platform, defining pricing and onboarding strategy",
       "Built an <strong>AI-powered Knowledge Assistant</strong> — cutting knowledge discovery from <strong>hours to minutes</strong> and enabling self-service at scale across the organization",
     ],
     highlights: ["Product Strategy", "Fintech", "AI", "Platform", "Payments"],
@@ -22,17 +23,18 @@ const experiences = [
     role: "Product Manager",
     company: "American Express",
     location: "Gurgaon, India",
+    subtitle: "Product Owner → Manager, Product Management (promoted Jan 2020)",
     bullets: [
-      "Digitized KYC journey across <strong>6</strong> EMEA markets impacting <strong>1M+</strong> cardholder accounts",
-      "Built AI/NLP case presentment automation addressing a <strong>$14M</strong> global <strong>OPEX opportunity</strong>",
-      "Automated dispute abuser identification reducing <strong>manual effort</strong> by <strong>75%</strong>, saving <strong>$350K</strong>",
-      "Automated <strong>12</strong> manual processes via RPA delivering <strong>$2M</strong> in <strong>cost savings</strong>",
+      "Reduced customer onboarding time from <strong>days to hours</strong> by digitizing the KYC journey across <strong>6</strong> EMEA markets (Netherlands, Germany, France and others) — impacting <strong>1M+</strong> cardholder accounts",
+      "Scaled an experimental POC to build an <strong>NLP-powered email automation</strong> that reduced mean time to respond to customer requests by <strong>80%</strong> — addressing a <strong>$14M</strong> global <strong>OPEX opportunity</strong>",
+      "Automated dispute abuser identification — reducing <strong>manual effort</strong> by <strong>75%</strong> and delivering <strong>$350K</strong> in <strong>annual savings</strong>",
+      "Automated <strong>12</strong> manual processes via RPA (credit balance refund, disputes, etc.) — delivering <strong>$2M</strong> in <strong>cost savings</strong>",
     ],
     highlights: ["KYC", "AI/NLP", "RPA", "Automation", "EMEA"],
   },
   {
     period: "Jun 2015 — Aug 2017",
-    role: "Consultant",
+    role: "Consultant, Process Excellence",
     company: "Wipro Limited",
     location: "New Delhi, India",
     bullets: [
@@ -79,6 +81,9 @@ const ExperienceItem = ({ exp, index }: { exp: typeof experiences[0]; index: num
           {exp.role}
         </h3>
         <p className="text-primary text-sm font-medium mt-1">{exp.company} · {exp.location}</p>
+        {exp.subtitle && (
+          <p className="text-muted-foreground text-xs font-display mt-1">{exp.subtitle}</p>
+        )}
         <ul className="mt-3 space-y-1.5 pl-1 list-none">
           {exp.bullets.map((bullet) => (
             <li key={bullet} className="text-muted-foreground text-sm leading-relaxed flex [&_strong]:text-foreground [&_strong]:font-semibold">
