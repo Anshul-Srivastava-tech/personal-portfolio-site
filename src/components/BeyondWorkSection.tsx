@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Cpu, Clapperboard, BookOpen, Trees, PenLine } from "lucide-react";
+import { Cpu, Clapperboard, BookOpen, Trees, PenLine, ExternalLink } from "lucide-react";
 
 const interests = [
   {
@@ -85,12 +85,13 @@ const BeyondWorkSection = () => {
           <PenLine className="w-5 h-5 text-primary" />
           <div>
             <p className="font-display text-base font-semibold text-foreground group-hover:text-primary transition-colors">
-              Adhyayah
+              Adhyay
             </p>
             <p className="text-sm text-muted-foreground">
               Personal writing on product, life, and everything in between.
             </p>
           </div>
+          <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ml-auto shrink-0" />
         </a>
       </motion.div>
     </section>
